@@ -18,3 +18,7 @@ file node[:dnsmasq][:conf_file] do
   group "root"
   content "conf-dir=#{node[:dnsmasq][:conf_dir]}\n"
 end
+
+template "#{node[:dnsmasq][:conf_dir]}/10_default" do
+  source "10_default.erb"
+end

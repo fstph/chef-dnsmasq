@@ -2,5 +2,14 @@
 
 Sets up dnsmasq as a small DNS and DHCP server. This is mainly intended for use in a VM host.
 
-= Usage
+= Attributes
+
+* node[:dnsmasq][:dns_servers] - upstream dns servers
+* node[:dnsmasq][:listen_interface] - default interface to listen on
+* node[:dnsmasq][:domain]
+
+* node[:dnsmasq][:dhcp_range_from]
+* node[:dnsmasq][:dhcp_range_to]
+* node[:dnsmasq][:lease_time]
+
 
