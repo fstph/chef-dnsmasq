@@ -13,7 +13,7 @@ directory node[:dnsmasq][:conf_dir] do
 end
 
 file node[:dnsmasq][:conf_file] do
-  mode 0311
+  mode 0644
   owner "root"
   group "root"
   content "conf-dir=#{node[:dnsmasq][:conf_dir]}\n"
