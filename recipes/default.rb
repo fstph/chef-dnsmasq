@@ -26,3 +26,5 @@ end
 template "#{node[:dnsmasq][:conf_dir]}/10_ntp" do
   source "10_ntp.erb"
 end if node[:dnsmasq][:ntp_servers] and !node[:dnsmasq][:ntp_servers].empty?
+
+include_recipe "dnsmasq::tftp" if !node[:dnsmasq][:tftp_root].empty?

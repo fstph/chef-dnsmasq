@@ -13,3 +13,6 @@ default[:dnsmasq][:dhcp_range_to] = "10.0.0.255"
 default[:dnsmasq][:lease_time] = "infinite"
 
 default[:dnsmasq][:ntp_servers] = []
+
+default[:dnsmasq][:tftp_root] = "/var/ftpd"
+default[:dnsmasq][:dhcp_boot_file] = "pxelinux.0"

@@ -12,5 +12,7 @@ Sets up dnsmasq as a small DNS and DHCP server. This is mainly intended for use 
 * node[:dnsmasq][:dhcp_range_to]
 * node[:dnsmasq][:lease_time]
 
-* default[:dnsmasq][:ntp_servers] - Array of NTP Servers to use, leave empty if you don't want to use NTP, set to ["0.0.0.0"] if you want the local machine to be your NTP Server
+* node[:dnsmasq][:ntp_servers] - Array of NTP Servers to use, leave empty if you don't want to use NTP, set to ["0.0.0.0"] if you want the local machine to be your NTP Server
 
+* node[:dnsmasq][:tftp_root] - set this to empty to disable tftp
+* node[:dnsmasq][:dhcp_boot_file]
