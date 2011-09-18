@@ -1,0 +1,6 @@
+= Description
+
+Sets up dnsmasq as a small DNS and DHCP server. This is mainly intended for use in a VM host.
+
+= Usage
+
