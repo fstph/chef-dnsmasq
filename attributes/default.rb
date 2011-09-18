@@ -11,3 +11,5 @@ default[:dnsmasq][:domain] = "example.com"
 default[:dnsmasq][:dhcp_range_from] = "10.0.0.1"
 default[:dnsmasq][:dhcp_range_to] = "10.0.0.255"
 default[:dnsmasq][:lease_time] = "infinite"
+
+default[:dnsmasq][:ntp_servers] = []
