@@ -19,15 +19,3 @@ file node[:dnsmasq][:conf_file] do
   content "conf-dir=#{node[:dnsmasq][:conf_dir]}\n"
   notifies :restart, resources(:service => "dnsmasq")
 end
-
-template "#{node[:dnsmasq][:conf_dir]}/10_default" do
-  source "10_default.erb"
-  notifies :restart, resources(:service => "dnsmasq")
-end
-
-template "#{node[:dnsmasq][:conf_dir]}/10_ntp" do
-  source "10_ntp.erb"
-  notifies :restart, resources(:service => "dnsmasq")
-end if node[:dnsmasq][:ntp_servers] and !node[:dnsmasq][:ntp_servers].empty?
-
-include_recipe "dnsmasq::tftp" if !node[:dnsmasq][:tftp_root].empty?

@@ -1,8 +1,9 @@
-<% node[:dnsmasq][:dns_servers].each do |s| -%>
+<% @dns_servers.each do |s| -%>
 server=<%= s %>
 <% end -%>
 
-interface=<%= node[:dnsmasq][:listen_interface] %>
-domain=<%= node[:dnsmasq][:domain] %>
+<% @interfaces.each do |i| -%>
+interface=<%= i %>
+<% end -%>
 
-dhcp-range=<%= node[:dnsmasq][:dhcp_range_from] -%>,<%= node[:dnsmasq][:dhcp_range_to] -%>,<%= node[:dnsmasq][:lease_time] %>
+dhcp-range=<%= @dhcp_range.join(",") -%>,<%= @dhcp_lease %>

@@ -6,5 +6,6 @@ end
 
 template "#{node[:dnsmasq][:conf_dir]}/10_tftp" do
   source "10_tftp.erb"
+  cookbook "dnsmasq"
   notifies :restart, resources(:service => "dnsmasq")
 end
